@@ -87,7 +87,7 @@ body{
 .hero{
  display: grid;
  grid-template-columns: 1fr 1fr;
- margin-top: 250px;
+ margin-top: 25px;
  width: 100%;
  gap: 20px;
 }
