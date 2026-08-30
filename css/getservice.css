@@ -1,0 +1,222 @@
+/* ==============================
+   GET SERVICE PAGE
+   ============================== */
+:root {
+    --background: #0B0F19;
+    --card: rgba(255, 255, 255, 0.08);
+    --primary:rgba(198, 98, 228, 0.747);;
+    --text: #F9FAFB;
+    --muted: #9CA3AF;
+    --border: rgba(255, 255, 255, 0.15);
+}
+
+.get-service {
+    min-height: 100vh;
+
+    padding: 60px 20px;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+
+.service-header {
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+.service-header h1 {
+    margin-bottom: 15px;
+
+    font-size: 38px;
+}
+
+.service-header p {
+    line-height: 1.7;
+
+    color: var(--muted);
+}
+
+
+/* ==============================
+   FORM CONTAINER
+   ============================== */
+
+.service-form-container {
+    max-width: 600px;
+
+    margin: auto;
+}
+
+
+/* ==============================
+   FORM CARD
+   ============================== */
+
+.service-form {
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.service-form h2 {
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+
+/* ==============================
+   FORM GROUP
+   ============================== */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+
+/* ==============================
+   INPUT / SELECT / TEXTAREA
+   ============================== */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: var(--text);
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+
+/* ==============================
+   FOCUS EFFECT
+   ============================== */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: rgb(193, 55, 235);
+
+    box-shadow: 0 0 10px rgba(193, 55, 235, 0.25);
+}
+
+
+/* ==============================
+   TEXTAREA
+   ============================== */
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* ==============================
+   SELECT OPTIONS
+   ============================== */
+
+.form-group select option {
+    background: #111827;
+
+    color: white;
+}
+
+
+/* ==============================
+   BUTTON
+   ============================== */
+
+.service-form button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: rgb(58, 82, 189);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.service-form button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(58, 82, 189, 0.4);
+}
+
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 600px) {
+
+    .get-service {
+        padding: 40px 15px;
+    }
+
+    .service-header h1 {
+        font-size: 30px;
+    }
+
+    .service-form {
+        padding: 25px 20px;
+    }
+}
