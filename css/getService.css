@@ -1,0 +1,234 @@
+/* ============================================================
+   Get Service page — extends index.css tokens
+   ============================================================ */
+:root{
+    --ink:        #14213D;
+    --blue:       #2C6E9B;
+    --blue-dark:  #1F5177;
+    --amber:      #F2A93B;
+    --amber-dark: #D98F1F;
+    --white:      #FFFFFF;
+    --mist:       #F5F7FB;
+    --line:       #DEE4EE;
+    --slate:      #56607A;
+    --slate-light:#8891A5;
+
+    --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+    --font-body: 'Inter', 'Segoe UI', sans-serif;
+
+    --container: 1140px;
+    --radius: 10px;
+    --header-h: 76px;
+}
+.quote-hero{
+    padding-top: calc(var(--header-h) + 64px);
+    padding-bottom: 48px;
+    background:
+        radial-gradient(circle at 85% 10%, rgba(44,110,155,0.07), transparent 45%),
+        var(--white);
+}
+.quote-hero-inner{
+    max-width: 720px;
+    margin: 0 auto;
+}
+.quote-hero .hero-lead{ font-size: 1.05rem; }
+
+.quote-body{
+    background: var(--mist);
+    padding-top: 24px;
+}
+.quote-grid{
+    max-width: var(--container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.3fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* ---- Sidebar ---- */
+.quote-aside{
+    position: sticky;
+    top: calc(var(--header-h) + 32px);
+}
+.quote-aside .about-facts{
+    border-left: 2px solid var(--amber);
+    padding-left: 24px;
+    margin-top: 28px;
+}
+.quote-aside-note{
+    margin-top: 28px;
+    font-size: 0.92rem;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+/* ---- Form card ---- */
+.quote-form-wrap{
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 40px;
+}
+
+.quote-form{
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.field-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.field label, .service-type-field legend{
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    padding: 0;
+}
+.optional{
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--slate-light);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea{
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    color: var(--ink);
+    background: var(--white);
+    border: 1.5px solid var(--line);
+    border-radius: 7px;
+    padding: 12px 14px;
+    width: 100%;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+textarea{ resize: vertical; min-height: 130px; font-family: var(--font-body); }
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(44,110,155,0.15);
+}
+
+select{ appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2356607A'%3E%3Cpath d='M5.5 8l4.5 4.5L14.5 8'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 16px; padding-right: 38px; }
+
+.field.has-error input,
+.field.has-error textarea,
+.field.has-error select{
+    border-color: #C0392B;
+}
+.field-error{
+    display: none;
+    font-size: 0.82rem;
+    color: #C0392B;
+}
+.field.has-error .field-error,
+.service-type-field.has-error .field-error{ display: block; }
+
+/* ---- Service type segmented control ---- */
+.service-type-field{
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.service-type-group{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+.service-type-group input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    width: 1px; height: 1px;
+}
+.service-type-group label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--slate);
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    padding: 18px 10px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.type-icon{
+    width: 26px; height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+}
+.service-type-group label:hover{ border-color: var(--blue); }
+.service-type-group input[type="radio"]:checked + label{
+    border-color: var(--blue);
+    background: rgba(44,110,155,0.07);
+    color: var(--blue-dark);
+}
+.service-type-group input[type="radio"]:focus-visible + label{
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+.quote-submit{ align-self: flex-start; margin-top: 6px; }
+.quote-form-note{
+    font-size: 0.82rem;
+    color: var(--slate-light);
+    margin: -12px 0 0;
+}
+
+/* ---- Success state ---- */
+.quote-success{
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 56px 40px;
+    text-align: center;
+}
+.success-icon{
+    width: 56px; height: 56px;
+    margin: 0 auto 20px;
+    fill: none;
+    stroke: var(--blue);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.success-icon circle{ stroke: var(--amber); }
+.quote-success h2{ margin-bottom: 10px; }
+.quote-success p{ margin: 0 auto 24px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 900px){
+    .quote-grid{ grid-template-columns: 1fr; }
+    .quote-aside{ position: static; }
+}
+
+@media (max-width: 560px){
+    .quote-form-wrap{ padding: 26px; }
+    .field-row{ grid-template-columns: 1fr; }
+    .service-type-group{ grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .service-type-group label{ padding: 12px 4px; font-size: 0.78rem; }
+    .type-icon{ width: 20px; height: 20px; }
+}
